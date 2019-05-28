@@ -52,6 +52,7 @@
             @if ($profile_form->profile_histories->isEmpty())
             @php
             $latestprofileHistory = $profile_form->profile_histories->last();
+            dd($profile_form->profile_histories);
             @endphp
             <li class="list-group-item">{{ $latestprofileHistory->edited_at }}</li>
             @endif

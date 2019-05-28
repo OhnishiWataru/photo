@@ -86,7 +86,7 @@
             //$historyArray = $photo_form->histories->toArray();
             //$latestHistory = array_pop($historyArray);
             $latestHistory = $photo_form->histories->last();
-            //dd($photo_form->histories;
+            //dd($photo_form->histories);
             @endphp
             <li class="list-group-item">{{ $latestHistory->edited_at }}</li>
             @endif
