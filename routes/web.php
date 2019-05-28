@@ -41,4 +41,5 @@ Route::get('/photo/show/{id}', 'PhotoController@show');
 
 Route::get('/likes/create', 'LikesController@create');
 Route::get('/likes/delete', 'LikesController@delete');
+Route::get('/likes/show/{id}', 'LikesController@show');
 Route::post('photo/{post}/likes/{like}', 'LikesController@index');
