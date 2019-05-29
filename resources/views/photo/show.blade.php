@@ -8,7 +8,7 @@
   <div class="row">
     <div class="headline col-md-12 mx-auto">
       <div class="title p-2">
-        <h3>{{ str_limit($photo->title, 70) }}</h3>
+        <h3>タイトル「{{ str_limit($photo->title, 70) }}」</h3>
       </div>
       <div class="image">
         @if ($photo->image_path)
@@ -23,6 +23,7 @@
       @endif
     </div>
   </div>
+  {{--
   @if (count($likes) == 0)
   <form action="{{ action('LikesController@create') }}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
@@ -36,5 +37,5 @@
     <input type="submit" class="btn btn-primary" value="いいねを解除">
   </form>
   @endif
-</div>
+</div> --}}
 @endsection
