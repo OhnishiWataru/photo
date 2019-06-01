@@ -49,10 +49,10 @@
         <div class="col-md-4 mx-auto">
           <h2>編集履歴</h2>
           <ul class="list-group">
-            @if ($profile_form->profile_histories->isEmpty())
+            @if (!$profile_form->profile_histories->isEmpty())
             @php
             $latestprofileHistory = $profile_form->profile_histories->last();
-            dd($profile_form->profile_histories);
+            //dd($profile_form->profile_histories);
             @endphp
             <li class="list-group-item">{{ $latestprofileHistory->edited_at }}</li>
             @endif

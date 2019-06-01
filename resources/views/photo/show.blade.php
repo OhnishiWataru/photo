@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.admin')
 @section('title', '写真詳細')
 
 @section('content')

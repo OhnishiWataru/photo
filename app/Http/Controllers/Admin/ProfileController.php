@@ -36,10 +36,11 @@ class ProfileController extends Controller
     {
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
-        $posts = Profile::where('title', $cond_title)->get();
+        $posts = Profile::where('name', $cond_title)->get();
       } else {
         $posts = Profile::all();
       }
+      
       return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
@@ -48,6 +49,7 @@ class ProfileController extends Controller
       $profile = Profile::find($request->id);
 
       return view('admin.profile.edit', ['profile_form' => $profile]);
+      //dd($profile_form->profile_histories);
     }
 
     public function update(Request $request)
