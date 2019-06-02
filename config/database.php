@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +30,8 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+    $HEROKU_POSTGRESQL_SILVER_URL = parse_url 'postgres://zrbrepbcpeljyj:1f45f9da02b7a0af68a2ac008055fb467d2c07c3cee867557d0434cf3d209286@ec2-54-225-72-238.compute-1.amazonaws.com:5432/da9shloio84ngm';
+
 
     'connections' => [
 
