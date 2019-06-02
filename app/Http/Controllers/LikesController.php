@@ -45,5 +45,5 @@ class LikesController extends Controller
 
       return redirect()
               ->action('PhotoController@show', ['id' => $form['photo_id'] ]);
-    }zzz
+    }
 }
