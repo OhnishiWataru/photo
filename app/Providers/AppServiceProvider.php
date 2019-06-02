@@ -6,26 +6,26 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
+  /**
+  * Register any application services.
+  *
+  * @return void
+  */
+  public function register()
+  {
+    //
+  }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        if (\App::environment('production')) {
-            \URL::forceScheme('https');
-            Scheme::defaultStringLength(191);
-        }
+  /**
+  * Bootstrap any application services.
+  *
+  * @return void
+  */
+  public function boot()
+  {
+    // 以下を追記
+    if (\App::environment('production')) {
+      \URL::forceScheme('https');
     }
+  }
 }
