@@ -11,6 +11,8 @@ use App\History;
 
 use Carbon\Carbon;
 
+use Storage;
+
 class PhotoController extends Controller
 {
     public function add()
@@ -38,8 +40,8 @@ class PhotoController extends Controller
       $form = $request->all();
 
       if ($form['image']) {
-        $path = $request->file('image')->store('public/image');
-        $photo->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $photo->image_path = Storage::disk('s3')->url($path);
       } else {
           $photo->image_path = null;
       }
@@ -83,8 +85,8 @@ class PhotoController extends Controller
       if ($request->remove == 'true') {
           $photo_form['image_path'] = null;
       } elseif ($request->file('image')) {
-          $path = $request->file('image')->store('public/image');
-          $photo_form['image_path'] = basename($path);
+          $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+          $photo_form->image_path = Storage::disk('s3')->url($path);
       } else {
           $photo_form['image_path'] = $photo->image_path;
       }

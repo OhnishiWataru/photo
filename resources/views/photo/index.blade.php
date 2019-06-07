@@ -18,7 +18,7 @@
                 <div class="image">
                   @if ($headline->image_path)
                     <a href="{{ action('PhotoController@show', $headline->id )}}">
-                      <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+                      <img src="{{ $headline->image_path }}">
                     </a>
                   @endif
                 </div>
@@ -48,7 +48,7 @@
               <div class="image col-md-6 text-right mt-4">
                 @if ($post->image_path)
                 <a href="{{ action('PhotoController@show', $post->id )}}">
-                  <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                  <img src="{{ $post->image_path }}">
                 </a>
                 @endif
               </div>

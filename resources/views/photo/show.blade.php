@@ -12,7 +12,7 @@
       </div>
       <div class="image">
         @if ($photo->image_path)
-        <img src="{{ asset('storage/image/' . $photo->image_path) }}">
+        <img src="{{ $photo->image_path }}">
         @endif
       </div>
       <div>
